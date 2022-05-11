@@ -10,6 +10,11 @@ const main = async () => {
     let score = await gameContract.score();
     await score.wait();
     numberOfGoals = await gameContract.getTotalGoals();
+    goals = await gameContract.connect(randomPerson).score();
+    await score.wait();
+    numberOfGoals = await gameContract.getTotalGoals();
+
+  
   };
   
   const runMain = async () => {
